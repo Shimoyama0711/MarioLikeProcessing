@@ -41,10 +41,12 @@ public class Main extends PApplet {
 
         //image(loadImage(b.getFileName()), b.getX(), b.getY(), 32, 32);
 
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                IceBlock ice = new IceBlock((i * 32), (j * 32), 1.0f);
-                drawBlock(ice);
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                if ((i + j) % 2 == 0) {
+                    IceBlock ice = new IceBlock((i * 32), (j * 32), 1.0f);
+                    drawBlock(ice);
+                }
             }
         }
 
