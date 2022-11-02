@@ -2,9 +2,6 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.sound.SoundFile;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main extends PApplet {
     Block b;
 
@@ -47,7 +44,7 @@ public class Main extends PApplet {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 IceBlock ice = new IceBlock((i * 32), (j * 32), 1.0f);
-                image(loadImage(ice.getFileName()), (i * 32), (j * 32));
+                drawBlock(ice);
             }
         }
 
@@ -63,5 +60,9 @@ public class Main extends PApplet {
     public void playSound(String fileName) {
         SoundFile sf = new SoundFile(this, "resource/sound/" + fileName);
         sf.play();
+    }
+
+    public void drawBlock(Block b) {
+        image(loadImage(b.getFileName()), b.getX(), b.getY(), b.getWidth(), b.getHeight());
     }
 }
