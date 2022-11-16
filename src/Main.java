@@ -1,11 +1,11 @@
 import processing.core.PApplet;
-import processing.core.PImage;
 import processing.sound.SoundFile;
 
-import java.util.Random;
+import java.io.*;
 
 public class Main extends PApplet {
     Block b;
+    File file = new File("src/resource/misc/course.txt");
 
     public static void main(String[] args) {
         String[] classes = {Main.class.getName(), Block.class.getName()};
@@ -31,32 +31,35 @@ public class Main extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
-        for (int x = 0; x <= width; x += 96) {
-            for (int y = 0; y <= height; y += 96) {
-                int r = (count < 0) ? -1 : (int) random(0, 5);
-                String fileName = "resource/img/mario" + r + ".png";
-                PImage img = loadImage(fileName);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
 
-                image(img, x, y, 32, 32);
-            }
-        }
+            int count = -1;
+            int W = 0;
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (count == -1) {
+                    W = Integer.parseInt(line.split(" ")[0]);
+                } else {
+                    for (int j = 0; j < W; j++) {
+                        char c = line.charAt(j);
+                        float x = (j * 32);
+                        float y = (count * 32);
 
-        //image(loadImage(b.getFileName()), b.getX(), b.getY(), 32, 32);
-
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                int random = new Random().nextInt(2);
-
-                if ((i + j) % 8 == 0) {
-                    if (random == 0) {
-                        IceBlock ice = new IceBlock((i * 32), (j * 32), 1.0f);
-                        drawBlock(ice);
-                    } else {
-                        HardBlock hard = new HardBlock((i * 32), (j * 32));
-                        drawBlock(hard);
+                        if (c == 'G') {
+                            image(loadImage("resource/img/GroundBlock.png"), x, y, 32, 32);
+                        } else if (c == 'I') {
+                            image(loadImage("resource/img/ice.png"), x, y, 32, 32);
+                        }
                     }
                 }
+
+                count++;
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         count++;
