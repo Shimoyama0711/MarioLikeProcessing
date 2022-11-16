@@ -1,7 +1,4 @@
-import processing.core.PApplet;
-import processing.core.PImage;
-
-public class Block extends PApplet {
+public class Entity {
     public static float X;
     public static float Y;
     public static float Width;
@@ -11,9 +8,9 @@ public class Block extends PApplet {
     // コンストラクタ //
 
     /**
-     * デフォルトの設定でBlockを生成します
+     * デフォルトの設定でEntityを生成します
      */
-    public Block() {
+    public Entity() {
         FileName = "resource/img/mario0.png";
         X = 0;
         Y = 0;
@@ -22,13 +19,13 @@ public class Block extends PApplet {
     }
 
     /**
-     * デフォルトの解像度32×32pxに設定してBlockを生成します
+     * デフォルトの解像度32×32pxに設定してEntityを生成します
      *
      * @param fileName ファイル名
-     * @param x imageのX座標
-     * @param y imageのY座標
+     * @param x EntityのX座標
+     * @param y EntityのY座標
      */
-    public Block(String fileName, float x, float y) {
+    public Entity(String fileName, float x, float y) {
         FileName = "resource/img/" + fileName;
         X = x;
         Y = y;
@@ -36,16 +33,17 @@ public class Block extends PApplet {
         Height = 32;
     }
 
+
     /**
-     * 解像度と座標を設定してBlockを生成します
+     * 解像度と座標を設定してEntityを生成します
      *
      * @param fileName ファイル名
-     * @param x imageのX座標
-     * @param y imageのY座標
-     * @param width imageの幅
-     * @param height imageの高さ
+     * @param x EntityのX座標
+     * @param y EntityのY座標
+     * @param width Entityの幅
+     * @param height Entityの高さ
      */
-    public Block(String fileName, float x, float y, float width, float height) {
+    public Entity(String fileName, float x, float y, float width, float height) {
         FileName = "resource/img/" + fileName;
         X = x;
         Y = y;
@@ -53,47 +51,43 @@ public class Block extends PApplet {
         Height = height;
     }
 
-    // SEPARATE //
-
-    public float getX() {
+    public static float getX() {
         return X;
     }
 
-    public float getY() {
+    public static float getY() {
         return Y;
     }
 
-    public float getWidth() {
+    public static float getWidth() {
         return Width;
     }
 
-    public float getHeight() {
+    public static float getHeight() {
         return Height;
     }
 
-    public String getFileName() {
+    public static String getFileName() {
         return FileName;
     }
 
-    // SEPARATE //
-
     public static void setX(float x) {
-        Block.X = x;
+        X = x;
     }
 
     public static void setY(float y) {
-        Block.Y = y;
+        Y = y;
     }
 
     public static void setWidth(float width) {
-        Block.Width = width;
+        Width = width;
     }
 
     public static void setHeight(float height) {
-        Block.Height = height;
+        Height = height;
     }
 
     public static void setFileName(String fileName) {
-        Block.FileName = fileName;
+        FileName = fileName;
     }
 }

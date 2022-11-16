@@ -2,6 +2,8 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import processing.sound.SoundFile;
 
+import java.util.Random;
+
 public class Main extends PApplet {
     Block b;
 
@@ -43,9 +45,16 @@ public class Main extends PApplet {
 
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
-                if ((i + j) % 2 == 0) {
-                    IceBlock ice = new IceBlock((i * 32), (j * 32), 1.0f);
-                    drawBlock(ice);
+                int random = new Random().nextInt(2);
+
+                if ((i + j) % 8 == 0) {
+                    if (random == 0) {
+                        IceBlock ice = new IceBlock((i * 32), (j * 32), 1.0f);
+                        drawBlock(ice);
+                    } else {
+                        HardBlock hard = new HardBlock((i * 32), (j * 32));
+                        drawBlock(hard);
+                    }
                 }
             }
         }
@@ -65,6 +74,12 @@ public class Main extends PApplet {
     }
 
     public void drawBlock(Block b) {
-        image(loadImage(b.getFileName()), b.getX(), b.getY(), b.getWidth(), b.getHeight());
+        if (b instanceof IceBlock) {
+            IceBlock ice = (IceBlock) b;
+
+            image(loadImage(b.getFileName()), b.getX(), b.getY(), b.getWidth(), b.getHeight());
+        } else {
+            image(loadImage(b.getFileName()), b.getX(), b.getY(), b.getWidth(), b.getHeight());
+        }
     }
 }
