@@ -24,6 +24,8 @@ public class IceBlock extends Block {
         FileName = "resource/img/ice.png";
         X = x;
         Y = y;
+        Width = 32;
+        Height = 32;
         Friction = friction;
     }
 
@@ -45,11 +47,19 @@ public class IceBlock extends Block {
         Friction = friction;
     }
 
-    public static double getFriction() {
+    /**
+     * IceBlockの摩擦係数を取得します
+     * @return IceBlockの摩擦係数
+     */
+    public double getFriction() {
         return Friction;
     }
 
-    public static void setFriction(float friction) {
+    /**
+     * IceBlockの摩擦係数を変更します
+     * @param friction 適用する摩擦係数
+     */
+    public void setFriction(float friction) {
         IceBlock.Friction = friction;
     }
 }

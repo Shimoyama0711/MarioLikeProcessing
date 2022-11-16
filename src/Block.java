@@ -10,6 +10,9 @@ public class Block extends PApplet {
 
     // コンストラクタ //
 
+    /**
+     * デフォルトの設定でBlockを生成します
+     */
     public Block() {
         FileName = "resource/img/mario0.png";
         X = 0;
@@ -31,6 +34,23 @@ public class Block extends PApplet {
         Y = y;
         Width = 32;
         Height = 32;
+    }
+
+    /**
+     * 解像度と座標を設定してBlockを生成します
+     *
+     * @param fileName ファイル名
+     * @param x imageのX座標
+     * @param y imageのY座標
+     * @param width imageの幅
+     * @param height imageの高さ
+     */
+    public Block(String fileName, float x, float y, float width, float height) {
+        FileName = "resource/img/" + fileName;
+        X = x;
+        Y = y;
+        Width = width;
+        Height = height;
     }
 
     // SEPARATE //
