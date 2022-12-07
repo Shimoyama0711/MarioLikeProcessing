@@ -1,12 +1,12 @@
-11 11
-GGGGGGGGGGG
-G G G G G G
-IIIIIIIIIII
-GGGGGGGGGGG
-G G G G G G
-IIIIIIIIIII
-GGGGGGGGGGG
-G G G G G G
-IIIIIIIIIII
-GGGGGGGGGGG
-G G G G G G
+20 11
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+####################
+#S##################
+IIIIIIIIIIIIIIIIIIII
+GGGGGGGGGGGGGGGGGGGG

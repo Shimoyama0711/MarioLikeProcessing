@@ -77,23 +77,23 @@ public class Block extends PApplet {
 
     // SEPARATE //
 
-    public static void setX(float x) {
+    public void setX(float x) {
         Block.X = x;
     }
 
-    public static void setY(float y) {
+    public void setY(float y) {
         Block.Y = y;
     }
 
-    public static void setWidth(float width) {
+    public void setWidth(float width) {
         Block.Width = width;
     }
 
-    public static void setHeight(float height) {
+    public void setHeight(float height) {
         Block.Height = height;
     }
 
-    public static void setFileName(String fileName) {
-        Block.FileName = fileName;
+    public void setFileName(String fileName) {
+        Block.FileName = "resource/img/" + fileName;
     }
 }
