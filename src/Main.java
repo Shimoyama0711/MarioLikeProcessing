@@ -47,7 +47,7 @@ public class Main extends PApplet {
                         float y = (count * 32);
 
                         if (c == 'G') {
-                            image(loadImage("resource/img/GroundBlock.png"), x, y, 32, 32);
+                            image(loadImage("resource/img/ground.png"), x, y, 32, 32);
                         } else if (c == 'I') {
                             image(loadImage("resource/img/ice.png"), x, y, 32, 32);
                         }
@@ -68,7 +68,7 @@ public class Main extends PApplet {
     @Override
     public void mouseClicked() {
         count = -10;
-        playSound("YEAH.mp3");
+        playSound("yeah.mp3");
     }
 
     public void playSound(String fileName) {

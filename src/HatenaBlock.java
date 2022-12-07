@@ -1,10 +1,10 @@
-public class hatena_block extends Block {
+public class HatenaBlock extends Block {
     public static boolean hitted;
     /**
      * hatena_Blockをデフォルトで生成します
      */
-    public hatena_block() {
-        FileName = "resource/img/hatena_block.png";
+    public HatenaBlock() {
+        FileName = "resource/img/hatena.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -18,8 +18,8 @@ public class hatena_block extends Block {
      * @param x BlockのX座標
      * @param y BlockのY座標
      */
-    public hatena_block(float x, float y,boolean punched) {
-        FileName = "resource/img/hatena_block.png";
+    public HatenaBlock(float x, float y, boolean punched) {
+        FileName = "resource/img/hatena.png";
         X = x;
         Y = y;
         hitted = punched;
@@ -33,8 +33,8 @@ public class hatena_block extends Block {
      * @param width IceBlockの横幅
      * @param height IceBlockの縦幅
      */
-    public hatena_block(float x, float y, float width, float height,boolean punched) {
-        FileName = "resource/img/hatena_block.png";
+    public HatenaBlock(float x, float y, float width, float height, boolean punched) {
+        FileName = "resource/img/hatena.png";
         X = x;
         Y = y;
         Width = width;
