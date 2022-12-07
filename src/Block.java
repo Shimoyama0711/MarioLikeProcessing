@@ -94,6 +94,6 @@ public class Block extends PApplet {
     }
 
     public void setFileName(String fileName) {
-        Block.FileName = fileName;
+        Block.FileName = "resource/img/" + fileName;
     }
 }

@@ -93,7 +93,7 @@ public class Entity {
     }
 
     public void setFileName(String fileName) {
-        FileName = fileName;
+        FileName = "resource/img/" + fileName;
     }
 
     public void setReverse(boolean reverse) {
