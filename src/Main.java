@@ -2,13 +2,15 @@ import processing.core.PApplet;
 import processing.sound.SoundFile;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Main extends PApplet {
     Block b;
     File file = new File("src/resource/misc/course.txt");
 
-    Mario mario = new Mario();
+    List<Entity> entityList = new ArrayList<>();
 
     float speed = 5.0f;
 
@@ -31,7 +33,6 @@ public class Main extends PApplet {
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
-            boolean flag = false;
 
             int count = -1;
             int W = 0;
@@ -46,14 +47,19 @@ public class Main extends PApplet {
                         float y = (count * 32);
 
                         if (c == 'S') {
-                            mario.setX(x);
-                            mario.setY(y);
-                            flag = true;
-                            break;
+                            Mario tmp = new Mario(x, y);
+                            entityList.add(tmp);
+
+                            System.out.println("=====[ Mario ]=====");
+                            System.out.println(x);
+                            System.out.println(y);
+                        } else if (c == 'K') {
+                            entityList.add(new Kuribo(x, y));
+                            System.out.println("=====[ Kuribo ]=====");
+                            System.out.println(x);
+                            System.out.println(y);
                         }
                     }
-
-                    if (flag) break;
                 }
 
                 count++;
@@ -68,6 +74,8 @@ public class Main extends PApplet {
 
     @Override
     public void draw() {
+        Mario mario = (Mario) entityList.get(0);
+
         background(0, 0, 0);
 
         if (DEATH < 0) {
@@ -98,11 +106,30 @@ public class Main extends PApplet {
                         } else if (c == 'I') {
                             IceBlock ice = new IceBlock(x, y, 1.0f);
                             drawBlock(ice);
+                        } else if (c == '?') {
+                            HatenaBlock h = new HatenaBlock(x, y, false);
+                            drawBlock(h);
+                        } else if (c == 'B') {
+                            BrickBlock b = new BrickBlock(x, y);
+                            drawBlock(b);
+                        } else if (c == 'M') {
+                            MagmaUpper M = new MagmaUpper(x, y);
+                            drawBlock(M);
+                        } else if (c == 'm') {
+                            MagmaLower m = new MagmaLower(x, y);
+                            drawBlock(m);
                         }
                     }
                 }
 
                 count++;
+            }
+
+            int tmp = 0;
+
+            for (Entity entity : entityList) {
+                drawEntity(entity);
+                tmp++;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -116,6 +143,7 @@ public class Main extends PApplet {
     @Override
     public void keyPressed() {
         int random = new Random().nextInt(4);
+        Mario mario = (Mario) entityList.get(0);
         String rot = mario.getFileName().contains("left") ? "left" : "right";
 
         if (keyCode == LEFT) {
@@ -163,6 +191,8 @@ public class Main extends PApplet {
     public void drawEntity(Entity e) {
         if (e instanceof Mario mario) {
             image(loadImage(mario.getFileName()), mario.getX(), mario.getY(), mario.getWidth(), mario.getHeight());
+        } else if (e instanceof Kuribo kuribo) {
+            image(loadImage("resource/img/entity/kuribo/kuribo-left.png"), kuribo.getX(), kuribo.getY(), kuribo.getWidth(), kuribo.getHeight());
         }
     }
 }

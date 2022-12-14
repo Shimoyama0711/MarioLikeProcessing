@@ -19,7 +19,7 @@ public class BrickBlock extends Block {
      * @param x BrickBlockのX座標
      * @param y BrickBlockのY座標
      */
-    public BrickBlock(float x, float y, float friction) {
+    public BrickBlock(float x, float y) {
         FileName = "resource/img/block/brick.png";
         X = x;
         Y = y;

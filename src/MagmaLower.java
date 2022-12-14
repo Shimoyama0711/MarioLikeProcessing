@@ -6,7 +6,7 @@ public class MagmaLower extends Block {
      * Magma_lowerをデフォルトで生成します
      */
     public MagmaLower() {
-        FileName = "resource/img/magma2.png";
+        FileName = "resource/img/block/magma2.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -19,8 +19,8 @@ public class MagmaLower extends Block {
      * @param x Magma_lowerのX座標
      * @param y Magma_lowerのY座標
      */
-    public MagmaLower(float x, float y, float friction) {
-        FileName = "resource/img/magma2.png";
+    public MagmaLower(float x, float y) {
+        FileName = "resource/img/block/magma2.png";
         X = x;
         Y = y;
     }
@@ -34,7 +34,7 @@ public class MagmaLower extends Block {
      * @param height Magma_lowerの縦幅
      */
     public MagmaLower(float x, float y, float width, float height) {
-        FileName = "resource/img/magma2.png";
+        FileName = "resource/img/block/magma2.png";
         X = x;
         Y = y;
         Width = width;

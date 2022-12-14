@@ -6,7 +6,7 @@ public class MagmaUpper extends Block {
      * Magma_upperをデフォルトで生成します
      */
     public MagmaUpper() {
-        FileName = "resource/img/magma1.png";
+        FileName = "resource/img/block/magma1.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -19,8 +19,8 @@ public class MagmaUpper extends Block {
      * @param x Magma_upperのX座標
      * @param y Magma_upperのY座標
      */
-    public MagmaUpper(float x, float y, float friction) {
-        FileName = "resource/img/magma1.png";
+    public MagmaUpper(float x, float y) {
+        FileName = "resource/img/block/magma1.png";
         X = x;
         Y = y;
     }
@@ -34,7 +34,7 @@ public class MagmaUpper extends Block {
      * @param height Magma_upperの縦幅
      */
     public MagmaUpper(float x, float y, float width, float height) {
-        FileName = "resource/img/magma1.png";
+        FileName = "resource/img/block/magma1.png";
         X = x;
         Y = y;
         Width = width;

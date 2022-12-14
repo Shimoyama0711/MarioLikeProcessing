@@ -1,9 +1,9 @@
 public class Entity {
-    public static float X;
-    public static float Y;
-    public static float Width;
-    public static float Height;
-    public static String FileName;
+    public float X;
+    public float Y;
+    public float Width;
+    public float Height;
+    public String FileName;
     // コンストラクタ //
 
     /**

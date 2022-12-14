@@ -1,11 +1,11 @@
 import processing.core.PApplet;
 
 public class Block extends PApplet {
-    public static float X;
-    public static float Y;
-    public static float Width;
-    public static float Height;
-    public static String FileName;
+    public float X;
+    public float Y;
+    public float Width;
+    public float Height;
+    public String FileName;
 
     // コンストラクタ //
 
@@ -77,22 +77,22 @@ public class Block extends PApplet {
     // SEPARATE //
 
     public void setX(float x) {
-        Block.X = x;
+        X = x;
     }
 
     public void setY(float y) {
-        Block.Y = y;
+        Y = y;
     }
 
     public void setWidth(float width) {
-        Block.Width = width;
+        Width = width;
     }
 
     public void setHeight(float height) {
-        Block.Height = height;
+        Height = height;
     }
 
     public void setFileName(String fileName) {
-        Block.FileName = "resource/img/block/" + fileName;
+        FileName = "resource/img/block/" + fileName;
     }
 }
