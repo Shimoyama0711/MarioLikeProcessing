@@ -6,7 +6,7 @@ public class BrickBlock extends Block {
      * BrickBlockをデフォルトで生成します
      */
     public BrickBlock() {
-        FileName = "resource/img/brick.png";
+        FileName = "resource/img/block/brick.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -20,7 +20,7 @@ public class BrickBlock extends Block {
      * @param y BrickBlockのY座標
      */
     public BrickBlock(float x, float y, float friction) {
-        FileName = "resource/img/brick.png";
+        FileName = "resource/img/block/brick.png";
         X = x;
         Y = y;
     }
@@ -34,7 +34,7 @@ public class BrickBlock extends Block {
      * @param height BrickBlockの縦幅
      */
     public BrickBlock(float x, float y, float width, float height) {
-        FileName = "resource/img/brick.png";
+        FileName = "resource/img/block/brick.png";
         X = x;
         Y = y;
         Width = width;

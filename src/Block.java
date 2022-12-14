@@ -1,5 +1,4 @@
 import processing.core.PApplet;
-import processing.core.PImage;
 
 public class Block extends PApplet {
     public static float X;
@@ -14,7 +13,7 @@ public class Block extends PApplet {
      * デフォルトの設定でBlockを生成します
      */
     public Block() {
-        FileName = "resource/img/mario0.png";
+        FileName = "resource/img/entity/mario/mario0.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -94,6 +93,6 @@ public class Block extends PApplet {
     }
 
     public void setFileName(String fileName) {
-        Block.FileName = "resource/img/" + fileName;
+        Block.FileName = "resource/img/block/" + fileName;
     }
 }

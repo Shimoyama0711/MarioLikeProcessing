@@ -4,7 +4,7 @@ public class HatenaBlock extends Block {
      * hatena_Blockをデフォルトで生成します
      */
     public HatenaBlock() {
-        FileName = "resource/img/hatena.png";
+        FileName = "resource/img/block/hatena.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -19,7 +19,7 @@ public class HatenaBlock extends Block {
      * @param y BlockのY座標
      */
     public HatenaBlock(float x, float y, boolean punched) {
-        FileName = "resource/img/hatena.png";
+        FileName = "resource/img/block/hatena.png";
         X = x;
         Y = y;
         hitted = punched;
@@ -34,7 +34,7 @@ public class HatenaBlock extends Block {
      * @param height IceBlockの縦幅
      */
     public HatenaBlock(float x, float y, float width, float height, boolean punched) {
-        FileName = "resource/img/hatena.png";
+        FileName = "resource/img/block/hatena.png";
         X = x;
         Y = y;
         Width = width;

@@ -71,7 +71,7 @@ public class Main extends PApplet {
         background(0, 0, 0);
 
         if (DEATH < 0) {
-            mario.setFileName("mario-1.png");
+            mario.setFileName("mario/mario-1-right.png");
             DEATH++;
         }
 
@@ -115,25 +115,28 @@ public class Main extends PApplet {
 
     @Override
     public void keyPressed() {
-        int random = new Random().nextInt(5);
+        int random = new Random().nextInt(4);
+        String rot = mario.getFileName().contains("left") ? "left" : "right";
 
         if (keyCode == LEFT) {
             mario.setX(mario.getX() - speed);
-            mario.setFileName("mario" + random + ".png");
-            mario.setReverse(true);
+            mario.setFileName("mario/mario" + random + "-left.png");
         }
 
         if (keyCode == RIGHT) {
             mario.setX(mario.getX() + speed);
-            mario.setFileName("mario" + random + ".png");
-            mario.setReverse(false);
+            mario.setFileName("mario/mario" + random + "-right.png");
         }
 
-        if (keyCode == UP)
+        if (keyCode == UP) {
             mario.setY(mario.getY() - speed);
+            mario.setFileName("mario/mario4-" + rot + ".png");
+        }
 
-        if (keyCode == DOWN)
+        if (keyCode == DOWN) {
             mario.setY(mario.getY() + speed);
+            mario.setFileName("mario/mario0-" + rot + ".png");
+        }
     }
 
     @Override
@@ -150,8 +153,7 @@ public class Main extends PApplet {
     }
 
     public void drawBlock(Block b) {
-        if (b instanceof IceBlock) {
-            IceBlock ice = (IceBlock) b;
+        if (b instanceof IceBlock ice) {
             image(loadImage(b.getFileName()), b.getX(), b.getY(), b.getWidth(), b.getHeight());
         } else {
             image(loadImage(b.getFileName()), b.getX(), b.getY(), b.getWidth(), b.getHeight());
@@ -159,12 +161,8 @@ public class Main extends PApplet {
     }
 
     public void drawEntity(Entity e) {
-        if (!e.isReverse()) {
-            image(loadImage(e.getFileName()), e.getX(), e.getY(), e.getWidth(), e.getHeight());
-        } else {
-            scale(-1, 1);
-            image(loadImage(e.getFileName()), (-e.getX()), e.getY(), e.getWidth(), e.getHeight());
-            scale(-1, 1);
+        if (e instanceof Mario mario) {
+            image(loadImage(mario.getFileName()), mario.getX(), mario.getY(), mario.getWidth(), mario.getHeight());
         }
     }
 }

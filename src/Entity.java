@@ -4,8 +4,6 @@ public class Entity {
     public static float Width;
     public static float Height;
     public static String FileName;
-    public static boolean reverse;
-
     // コンストラクタ //
 
     /**
@@ -16,7 +14,7 @@ public class Entity {
         Y = 0;
         Width = 32;
         Height = 32;
-        FileName = "resource/img/mario0.png";
+        FileName = "resource/img/entity/mario/mario0.png";
     }
 
     /**
@@ -72,10 +70,6 @@ public class Entity {
         return FileName;
     }
 
-    public boolean isReverse() {
-        return reverse;
-    }
-
     public void setX(float x) {
         X = x;
     }
@@ -93,10 +87,6 @@ public class Entity {
     }
 
     public void setFileName(String fileName) {
-        FileName = "resource/img/" + fileName;
-    }
-
-    public void setReverse(boolean reverse) {
-        Entity.reverse = reverse;
+        FileName = "resource/img/entity/" + fileName;
     }
 }

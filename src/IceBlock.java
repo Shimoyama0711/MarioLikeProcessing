@@ -5,7 +5,7 @@ public class IceBlock extends Block {
      * IceBlockをデフォルトで生成します
      */
     public IceBlock() {
-        FileName = "resource/img/ice.png";
+        FileName = "resource/img/block/ice.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -21,7 +21,7 @@ public class IceBlock extends Block {
      * @param friction IceBlockの摩擦係数
      */
     public IceBlock(float x, float y, float friction) {
-        FileName = "resource/img/ice.png";
+        FileName = "resource/img/block/ice.png";
         X = x;
         Y = y;
         Width = 32;
@@ -39,7 +39,7 @@ public class IceBlock extends Block {
      * @param friction IceBlockの摩擦係数
      */
     public IceBlock(float x, float y, float width, float height, float friction) {
-        FileName = "resource/img/ice.png";
+        FileName = "resource/img/block/ice.png";
         X = x;
         Y = y;
         Width = width;

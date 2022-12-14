@@ -3,7 +3,7 @@ public class HardBlock extends Block {
      * HardBlockをデフォルトで生成します
      */
     public HardBlock() {
-        FileName = "resource/img/hard.png";
+        FileName = "resource/img/block/hard.png";
         X = 0;
         Y = 0;
         Width = 32;
@@ -17,7 +17,7 @@ public class HardBlock extends Block {
      * @param y HardBlockのY座標
      */
     public HardBlock(float x, float y) {
-        FileName = "resource/img/hard.png";
+        FileName = "resource/img/block/hard.png";
         X = x;
         Y = y;
         Width = 32;
@@ -33,7 +33,7 @@ public class HardBlock extends Block {
      * @param height HardBlockの縦幅
      */
     public HardBlock(float x, float y, float width, float height) {
-        FileName = "resource/img/ice.png";
+        FileName = "resource/img/block/ice.png";
         X = x;
         Y = y;
         Width = width;
